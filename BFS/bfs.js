@@ -20,7 +20,7 @@ class Node {
 
 }
 
-let g = graph1;
+let g = graph;
 let graphW = g[0].length;
 let graphH = g.length;
 
@@ -49,13 +49,13 @@ function bfs(A){
             let x = current.x + neighbors[i][0];
             let y = current.y + neighbors[i][1];
 
-            if(x < 0 || y < 0){
+            if(x < 0 || y < 0){ //if end of map
                 continue;
             }
-            else if(x >= graphW || y >= graphH){
+            else if(x >= graphW || y >= graphH){ //if end of map
                 continue;
             }
-            else if(g[y][x] === 1){
+            else if(g[y][x] === 1){ //if obstacle
                 continue;
             }
             else{
@@ -66,11 +66,12 @@ function bfs(A){
                     if(reached[j].x === x && reached[j].y === y){
                         inReached = true;
                         break;
-                }
+                    }
                 }
                 if(!inReached){
-                    frontier.push(new Node(x,y))
-                    reached.push(new Node(x,y))
+                    let node = new Node(x,y)
+                    frontier.push(node)
+                    reached.push(node)
                 }
             }
 
