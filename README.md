@@ -1,5 +1,5 @@
 # Pathfinding-JS
 My attempt at coding pathfinding algorithms
 
-Dijkstra
+Dijkstra <br>
 Breadth First Search
